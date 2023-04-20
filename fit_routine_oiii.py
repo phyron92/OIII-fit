@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 from ast import Call
 from opcode import hascompare
 from typing import Callable, Iterable, List, Tuple, Union, Optional
@@ -32,7 +26,7 @@ lines['Hb'] = [(4862.68, 4862.68), (4800., 5000.), (1000., 1000.)]
 
 #General functions
 #Redshift
-z = 0.1283
+-->z = 0.1283
 #Wavelength to Velocity scale
 c = 299792 #km/s
 def lambda2vel(xLambda, restLambda):
@@ -78,7 +72,7 @@ def single(x, h, lmbda, sig, c):
     return (h/np.sqrt(2*np.pi)/sig)*np.exp(-(x-lmbda)**2/2/sig**2) + c
 single = np.vectorize(single)
 
-WLAX = 4750.45361328125 + np.arange(3682) * 1.25
+-->WLAX = 4750.45361328125 + np.arange(3682) * 1.25
 class Lines:
     def __init__(self, name: str, rest: Union[Tuple[float, float],Tuple[float, float, float]], crange: Tuple[float, float], 
                  vrange: Tuple[float, float], cube: NDArray, varc: NDArray, contspec: NDArray, quickrej_threshold: float = 0.2):
@@ -125,7 +119,7 @@ class Lines:
     
     #Slice an array according to the desired wavelength range
     def get_slice(self, arr_in: NDArray) -> NDArray:
-        mask = (WLAX[620] < WLAX) & (WLAX < WLAX[770])
+-->        mask = (WLAX[620] < WLAX) & (WLAX < WLAX[770])
         return arr_in[mask]
     
     #Return the lrange used in curve_fit
